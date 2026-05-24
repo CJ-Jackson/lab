@@ -1,0 +1,6 @@
+#!/bin/bash
+filepath="/home/user/document.txt"
+echo "${filepath#*/}"
+# home/user/document.txt (shortest match)
+echo "${filepath##*/}"
+# document.txt (longest match - this is basename!)

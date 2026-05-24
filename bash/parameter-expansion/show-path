@@ -1,0 +1,3 @@
+#!/bin/bash
+# Colons to newlines - no sed needed
+echo "${PATH//:/$'\n'}"

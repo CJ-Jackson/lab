@@ -1,0 +1,10 @@
+#!/bin/bash
+name="hello world"
+echo "${name^}"
+# Hello world (capitalize first)
+echo "${name^^}"
+# HELLO WORLD (uppercase all)
+
+name="HELLO WORLD"
+echo "${name,,}"
+# hello world (lowercase all)

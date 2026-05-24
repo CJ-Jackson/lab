@@ -1,0 +1,8 @@
+#!/bin/bash
+n=5
+echo {1..$5}
+# Doesn't work - prints literal {1..5}
+eval echo {1..$n}
+# Works but eval is dangerous
+seq 1 $n
+# Better approach
