@@ -1,0 +1,4 @@
+#!/bin/bash
+read -r url
+name=${1:-url}
+echo "[$name]($url)" 
