@@ -1,0 +1,17 @@
+set lazy := true
+
+NAME_TAG := "caddy_build:1.0.0"
+
+[default]
+[private]
+default:
+  @just --justfile {{ justfile() }} --list
+
+build:
+  #!/bin/dash
+  podman build -t "{{ NAME_TAG }}" .
+
+shell:
+  #!/bin/dash
+  podman run --rm -it "{{ NAME_TAG }}" sh
+

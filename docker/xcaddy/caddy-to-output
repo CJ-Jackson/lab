@@ -1,0 +1,3 @@
+#!/bin/sh
+cp /usr/local/bin/caddy "/mnt/output/$(cat /opt/caddy-x64.txt)"
+
