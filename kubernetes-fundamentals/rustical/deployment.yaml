@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rustical
+  name: rustical
+  namespace: calendar
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: rustical
+  template:
+    metadata:
+      labels:
+        app: rustical
+    spec:
+      containers:
+        - image: ghcr.io/lennart-k/rustical:0.13.1
+          name: rustical
+          ports:
+            - containerPort: 4000
+          volumeMounts:
+            - mountPath: /var/lib/rustical
+              name: rustical-data
+            - mountPath: /etc/rustical
+              name: rustical-config
+      volumes:
+      - name: rustical-data
+        persistentVolumeClaim:
+          claimName: rustical-data
+      - name: rustical-config
+        configMap:
+          name: rustical-config
+          items:
+          - key: "rustical-config"
+            path: "config.toml"

@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rustical-config
+  namespace: calendar
+data:
+  rustical-config: |
+    [data_store.sqlite]
+    db_url = "/var/lib/rustical/db.sqlite3"
+    run_repairs = true
+    skip_broken = true
+
+    [http]
+    bind = "[::]:4000"
+    session_cookie_samesite_strict = false
+    payload_limit_mb = 4
+
+    [frontend]
+    enabled = true
+    allow_password_login = true
+
+    [tracing]
+    opentelemetry = false
+
+    [dav_push]
+    enabled = true
+
+    [nextcloud_login]
+    enabled = false
+
+    [caldav]
+    rfc7809 = true
+
