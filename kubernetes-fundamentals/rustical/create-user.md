@@ -4,8 +4,8 @@ First identify pod.
 
 ```sh
 kubectl -n calendar get pods
-NAME                        READY   STATUS    RESTARTS   AGE
-rustical-5bb8d88c88-t2t7m   1/1     Running   0          81m
+# NAME                        READY   STATUS    RESTARTS   AGE
+# rustical-5bb8d88c88-t2t7m   1/1     Running   0          81m
 ```
 
 Than create the user account with the password.

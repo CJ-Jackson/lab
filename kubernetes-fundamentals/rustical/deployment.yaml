@@ -16,7 +16,7 @@ spec:
         app: rustical
     spec:
       containers:
-        - image: ghcr.io/lennart-k/rustical:0.13.1
+        - image: ghcr.io/lennart-k/rustical:0.13.0
           name: rustical
           ports:
             - containerPort: 4000
